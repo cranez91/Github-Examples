@@ -1,0 +1,10 @@
+name: Mi primer Action
+description: Mi primer action de prueba. Yuju!
+
+runs:
+  using: "composite"
+
+  steps:
+    name: Hola Mundo
+    run: echo "Hola Mundo"
+    shell: bash
