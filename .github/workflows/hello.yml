@@ -20,6 +20,7 @@ jobs:
 
   archivo:
     runs-on: ubuntu-latest
+    needs: [hola]
 
     steps:
       - name: Touch file
@@ -38,3 +39,14 @@ jobs:
           echo "ACTION: $GITHUB_ACTION"
           echo "ACTOR: $GITHUB_ACTOR"
           echo "EVENT: $GITHUB_EVENT_NAME"
+
+  otro:
+    runs-on: ubuntu-latest
+    needs: [archivo]
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+
+      - name: LS 
+        run: ls -al 
