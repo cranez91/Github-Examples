@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: Saludar
         run: echo 'Hola Mundo'
+
       - name: Informacion Basica
         run: |
           echo "REF: $GITHUB_REF"
@@ -16,3 +17,24 @@ jobs:
           echo "ACTION: $GITHUB_ACTION"
           echo "Actor: $GITHUB_ACTOR"
           echo "Event: $GITHUB_EVENT_NAME"
+
+  archivo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Touch file
+        run: touch hola.txt
+      
+      - name: Set text
+        run: echo "Leit euer Ohr einer Legende....RAMMSTEIN!" >> hola.txt
+
+      - name: Read file
+        run: cat hola.txt
+
+      - name: Basic Info
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "JOB: $GITHUB_JOB"
+          echo "ACTION: $GITHUB_ACTION"
+          echo "ACTOR: $GITHUB_ACTOR"
+          echo "EVENT: $GITHUB_EVENT_NAME"
