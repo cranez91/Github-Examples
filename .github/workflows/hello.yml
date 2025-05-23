@@ -9,3 +9,10 @@ jobs:
     steps:
       - name: Saludar
         run: echo 'Hola Mundo'
+      - name: Informacion Basica
+        run: |
+          echo "REF: $GITHUB_REF"
+          echo "JOB: $GITHUB_JOB"
+          echo "ACTION: $GITHUB_ACTION"
+          echo "Actor: $GITHUB_ACTOR"
+          echo "Event: $GITHUB_EVENT_NAME"
